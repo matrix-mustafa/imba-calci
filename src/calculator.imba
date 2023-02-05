@@ -1,6 +1,6 @@
 export tag Calculator
 	prop currentDisplay = 0
-	prop previousDisplay = ""
+	prop previousDisplay = 0
 	prop currentOperator = ""
 
 	css w:500px bgc:gray5 p:10px rd:6px
@@ -42,7 +42,7 @@ export tag Calculator
 	<self>
 		<div>
 			<div.display-header>
-				<div.previous> previousDisplay
+				<div.previous> if previousDisplay > 0 then previousDisplay
 				<div.operator> currentOperator
 			<div.main-display> currentDisplay
 			<div>
