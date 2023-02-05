@@ -5,17 +5,7 @@ global css body m:0 d:flex ja:center h:100vh
 import {Calculator} from './calculator'
 
 tag app
-	prop currentDigit = 0
-	prop currentDisplay = 0
-	prop previousDisplay = " "
-	prop currentOperator = " "
-
 	<self>
-		<Calculator
-			currentDigit=currentDigit
-			currentDisplay=currentDisplay
-			previousDisplay=previousDisplay
-			currentOperator=currentOperator
-		>
+		<Calculator>
 
 imba.mount <app>
