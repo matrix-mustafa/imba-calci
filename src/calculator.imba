@@ -15,6 +15,7 @@ export tag Calculator
 		else currentDisplay = "{currentDisplay}{digit}"
 
 	def setOperator operator
+		if currentOperator !== "" then calculate()
 		previousDisplay = currentDisplay
 		currentOperator = operator
 		currentDisplay = 0
@@ -24,16 +25,17 @@ export tag Calculator
 		elif currentOperator === "-" then currentDisplay = previousDisplay - currentDisplay
 		elif currentOperator === "×" then currentDisplay = previousDisplay * currentDisplay
 		elif currentOperator === "÷" then currentDisplay = previousDisplay / currentDisplay
-		previousDisplay = ""
-		currentOperator = ""
+		clearHeaderDisplay()
 
 	def clearAll
 		currentDisplay = 0
-		previousDisplay = ""
-		currentOperator = ""
+		clearHeaderDisplay()
 
 	def calculatePercent
 		currentDisplay = (previousDisplay * currentDisplay) / 100
+		clearHeaderDisplay()
+
+	def clearHeaderDisplay
 		previousDisplay = ""
 		currentOperator = ""
 
