@@ -31,6 +31,11 @@ export tag Calculator
 		currentDisplay = 0
 		clearHeaderDisplay()
 
+	def removeLastDigit
+		let newNumber = currentDisplay.toString()
+		newNumber = newNumber.substr(0, newNumber.length - 1)
+		currentDisplay = parseFloat(newNumber)
+
 	def calculatePercent
 		currentDisplay = (previousDisplay * currentDisplay) / 100
 		clearHeaderDisplay()
@@ -46,7 +51,8 @@ export tag Calculator
 				<div.operator> currentOperator
 			<div.main-display> currentDisplay
 			<div>
-				<button.double @click=clearAll> "AC"
+				<button @click=clearAll> "AC"
+				<button @click=removeLastDigit> "DEL"
 				<button @click=calculatePercent> "%"
 				<button.orange @click=setOperator("÷")> "÷"
 			<div>
