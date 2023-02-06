@@ -28,7 +28,7 @@ export tag Calculator
 			d:grid
 			gt: repeat(5, 10vh) / repeat(4, 1fr)
 		.double
-			gc:auto / span 2
+			gc:span 2
 
 	def setCurrentDigit digit
 		if digit !== "." then currentDisplay = parseFloat("{currentDisplay}{digit}")
